@@ -1,3 +1,9 @@
+> [!WARNING]
+> This plugin is no longer maintained and probably doesn't work with latest Insomnia version.  
+> To easily synchronize requests in a local folder / git repository, we recommand to give [bruno](https://github.com/usebruno/bruno) a try!
+
+---
+
 # Insomnia Core Repo Sync Plugin 3
 
 This plugin was developed to make it easier to sync workspaces in a given repository.
