@@ -1,6 +1,6 @@
 {
   "name": "insomnia-plugin-repo-sync-3",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "author": "Dotfile <contact@dotfile.com>",
   "description": "Sync your workspace to a Git repository.",
   "license": "MIT",
