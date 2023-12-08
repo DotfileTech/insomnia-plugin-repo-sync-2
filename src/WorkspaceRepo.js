@@ -1,20 +1,19 @@
-const storeKey = 'insomnia-plugin-repo-sync-workspace';
-
 class WorkspaceRepo {
-  constructor(context) {
+  constructor(context, workspace) {
     this.context = context;
+    this.storeKey = 'insomnia-plugin-repo-sync-workspace-' + workspace._id;
   }
 
   async getPath() {
-    return await this.context.store.getItem(storeKey);
+    return await this.context.store.getItem(this.storeKey);
   }
 
   async setPath(path) {
-    return await this.context.store.setItem(storeKey, path);
+    return await this.context.store.setItem(this.storeKey, path);
   }
 
   async isConfigured() {
-    return await this.context.store.hasItem(storeKey);
+    return await this.context.store.hasItem(this.storeKey);
   }
 }
 

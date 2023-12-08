@@ -14,7 +14,7 @@ module.exports.workspaceActions = [
     label: 'Repo Sync - Export Workspace',
     icon: 'fa-download',
     action: async (context, models) => {
-      const repo = new WorkspaceRepo(context);
+      const repo = new WorkspaceRepo(context, models.workspace);
       if (!(await verifyRepoConfig(repo, context))) return;
 
       const path = await repo.getPath();
@@ -54,7 +54,7 @@ module.exports.workspaceActions = [
     label: 'Repo Sync - Import Workspace',
     icon: 'fa-upload',
     action: async (context, models) => {
-      const repo = new WorkspaceRepo(context);
+      const repo = new WorkspaceRepo(context, models.workspace);
       if (!(await verifyRepoConfig(repo, context))) return;
 
       const path = await repo.getPath();
@@ -70,7 +70,7 @@ module.exports.workspaceActions = [
     label: 'Repo Sync - Configure',
     icon: 'fa-cog',
     action: async (context, models) => {
-      const repo = new WorkspaceRepo(context);
+      const repo = new WorkspaceRepo(context, models.workspace);
 
       const repoPath = await ScreenHelper.askRepoPath(context, {
         currentPath: await repo.getPath(),
